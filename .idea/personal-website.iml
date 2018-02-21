@@ -30,9 +30,11 @@
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/twig-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/web-server-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/twig/twig" />
     </content>
