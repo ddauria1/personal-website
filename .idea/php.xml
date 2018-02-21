@@ -35,6 +35,18 @@
       <path value="$PROJECT_DIR$/ddauria/vendor/symfony/twig-bundle" />
       <path value="$PROJECT_DIR$/ddauria/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/ddauria/vendor/symfony/web-server-bundle" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/easycorp/easy-log-handler" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/profiler-pack" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/debug-pack" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/ddauria/vendor/symfony/polyfill-php72" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
