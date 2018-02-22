@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css" media="screen">
+{% endblock %}
+
+{% block body %}
+    <h2>Page {{ id }}</h2>
+    {{ mainContent }}
+
+
+{% endblock %}

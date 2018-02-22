@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css" media="screen">
+{% endblock %}
+
+{% block body %}
+    {{ mainContent }}
+
+    <h2>Pagination</h2>
+    <p>Example call Annotations Route by passing id wildcard</p>
+    <ul>
+    {% for page in listPages %}
+        <li><a href="/blog/{{ page }}">Page {{ page }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+    <h2>Articles</h2>
+    <p>Example call Annotations Route by passing title article as wildcard</p>
+    <ul>
+        {% for article in listArticles %}
+            <li><a href="/blog/{{ article|replace({" ":"-"})|lower }}">{{ article }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
