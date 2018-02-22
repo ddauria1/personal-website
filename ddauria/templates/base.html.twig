@@ -2,11 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>DDAURIA | {% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css" media="screen">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <nav id="page-navigation">
+            <div>
+                <ul id="main-navigation-list" class="topnav">
+                    <li {% if (title=="Home") %} class="active" {% endif %} ><a href="/" >Home</a></li>
+                    <li {% if (title=="About") %} class="active" {% endif %} ><a href="/about">About Me</a></li>
+                    <li {% if (title=="Services") %} class="active" {% endif %} ><a href="/services">Services</a></li>
+                    <li {% if (title=="Online Marketing") %} class="active" {% endif %} ><a href="/marketing">Online Marketing</a></li>
+                    <li {% if (title=="Contact") %} class="active" {% endif %} ><a href="/contact">Contact</a></li>
+                    <li class="icon"><a href="javascript:void(0);" onclick="myFunction()">☰</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main id="page-main-no-sidebar">
+            <div>
+                <h1>{{ title }}</h1>
+                {% block body %}{% endblock %}
+            </div>
+        </main>
         {% block javascripts %}{% endblock %}
+        <script src="/js/main.js"></script>
     </body>
 </html>
