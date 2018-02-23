@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Psr\Log\LoggerInterface;
 
 class MainController extends Controller {
 
@@ -11,7 +12,10 @@ class MainController extends Controller {
      * @Route("/")
      *
      */
-    public function homepage(){
+    public function homepage(LoggerInterface $logger){
+
+        $logger->info("We are logging the homepage");
+
         return $this->render('home.html.twig',
             array(
                 'title' => 'Home',
@@ -26,6 +30,9 @@ class MainController extends Controller {
      *
      */
     public function contact(){
+
+        $logger->info("We are logging the contact page");
+
         return $this->render('pages/contact.html.twig',
             array(
                 'title' => 'Contact',
@@ -40,6 +47,9 @@ class MainController extends Controller {
      *
      */
     public function about(){
+
+        $logger->info("We are logging the about page");
+
         return $this->render('pages/about.html.twig',
             array(
                 'title' => 'About',
@@ -54,6 +64,9 @@ class MainController extends Controller {
      *
      */
     public function services(){
+
+        $logger->info("We are logging the services page");
+
         return $this->render('pages/services.html.twig',
             array(
                 'title' => 'Services',
@@ -67,6 +80,9 @@ class MainController extends Controller {
      *
      */
     public function marketing(){
+
+        $logger->info("We are logging the marketing page");
+
         return $this->render('pages/marketing.html.twig',
             array(
                 'title' => 'Online Marketing',
