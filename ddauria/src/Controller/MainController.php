@@ -29,7 +29,7 @@ class MainController extends Controller {
      * @Route("/contact")
      *
      */
-    public function contact(){
+    public function contact(LoggerInterface $logger){
 
         $logger->info("We are logging the contact page");
 
@@ -46,7 +46,7 @@ class MainController extends Controller {
      * @Route("/about")
      *
      */
-    public function about(){
+    public function about(LoggerInterface $logger){
 
         $logger->info("We are logging the about page");
 
@@ -63,7 +63,7 @@ class MainController extends Controller {
      * @Route("/services")
      *
      */
-    public function services(){
+    public function services(LoggerInterface $logger){
 
         $logger->info("We are logging the services page");
 
@@ -79,7 +79,7 @@ class MainController extends Controller {
      * @Route("/marketing")
      *
      */
-    public function marketing(){
+    public function marketing(LoggerInterface $logger){
 
         $logger->info("We are logging the marketing page");
 
