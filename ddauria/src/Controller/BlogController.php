@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
@@ -19,7 +20,7 @@ class BlogController extends Controller
      */
     public function index(){
 
-        $listPages = [ 1, 2, 10 ];
+        $listPages = [ 1, 2, 3 ];
 
         $listArticles = ['The Godfather','The Dark Knight','The Lord of the Rings: The Return of the King'];
 
@@ -38,7 +39,12 @@ class BlogController extends Controller
     /**
      * @Route ("/blog/{id}", requirements={"id"="\d+"})
      */
-    public function list($id){
+    public function list($id, LoggerInterface $logger){
+
+        if($id>3 || $id<1){ // currently we only accept three static ids [1, 2, 3]
+            $logger->error("Blog List Route - Invalid parameter passed: ".$id);
+            throw $this->createNotFoundException('The blog list page does not exist');
+        }
 
         return $this->render("blog/list.html.twig",
             array(
