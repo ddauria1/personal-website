@@ -1,7 +1,4 @@
-# personal-website
-
-
-Symfony 4
+# personal-website with Symfony 4
 
 First website with Symfony 4
 
@@ -13,4 +10,4 @@ Learning the basic usage of:
 - twig (loops, filters)
 
 
-To test the custom error pages in your local machine, please update the APP_ENV attribute under .env file. 
+To test the custom error pages in your local machine, please update the APP_ENV attribute under .env file to prod. 
