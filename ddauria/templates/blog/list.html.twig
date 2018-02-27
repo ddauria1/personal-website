@@ -3,12 +3,20 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block stylesheets %}
-
+ <style>
+.alert{
+    color: red;
+    font-weight: bold;
+}
+ </style>
 {% endblock %}
 
 {% block body %}
     <h2>Page {{ id }}</h2>
-    {{ mainContent }}
+    <p>
+        We only accept ids = 1, 2 or 3<br>  Any other id will throw a <span class="alert">createNotFoundException</span>.<br>
+        Applied requirements={"id"="\d+"} on the annotation Route
+    </p>
 
 
 {% endblock %}

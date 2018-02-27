@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: LSI
- * Date: 22/02/2018
- * Time: 07:54
- */
-
 namespace App\Controller;
 
 
@@ -49,7 +42,6 @@ class BlogController extends Controller
         return $this->render("blog/list.html.twig",
             array(
                 'title' => 'Blog',
-                'mainContent' => 'Content',
                 'id' =>$id
             )
         );
