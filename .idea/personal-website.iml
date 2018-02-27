@@ -10,6 +10,8 @@
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/polyfill-intl-icu" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/property-access" />
+      <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/validator" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

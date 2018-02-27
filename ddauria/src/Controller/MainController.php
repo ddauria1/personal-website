@@ -16,7 +16,7 @@ class MainController extends Controller {
 
         $logger->info("We are logging the homepage");
 
-        return $this->render('home.html.twig',
+        return $this->render('new.html.twig',
             array(
                 'title' => 'Home',
                 'mainContent' => 'Content'
