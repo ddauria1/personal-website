@@ -10,5 +10,4 @@ Learning the basic usage of:
 - twig (loops, filters)
 - forms
 
-
 To test the custom error pages in your local machine, please update the APP_ENV attribute under .env file to prod. 

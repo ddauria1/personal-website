@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block body %}
+    {{ mainContent }}
+
+    <div id="data-result">
+        <b>Name:</b> {{ formFields.name }}<br>
+        <b>Surname:</b> {{ formFields.surname }}<br>
+        <b>Email:</b> {{ formFields.email }}<br>
+        <b>Message:</b> {{ formFields.message }}<br>
+    </div>
+
+    <a href="{{ path('contact-page') }}">Go back to the form</a>
+
+{% endblock %}

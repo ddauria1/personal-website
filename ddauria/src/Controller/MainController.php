@@ -2,21 +2,27 @@
 namespace App\Controller;
 
 
+use App\Entity\Contact;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class MainController extends Controller {
 
     /**
-     * @Route("/")
+     * @Route("/" , name="home-page")
      *
      */
     public function homepage(LoggerInterface $logger){
 
         $logger->info("We are logging the homepage");
 
-        return $this->render('new.html.twig',
+        return $this->render('home.html.twig',
             array(
                 'title' => 'Home',
                 'mainContent' => 'Content'
@@ -26,24 +32,54 @@ class MainController extends Controller {
 
 
     /**
-     * @Route("/contact")
+     * @Route("/contact" , name="contact-page")
      *
      */
-    public function contact(LoggerInterface $logger){
+    public function contact(Request $request,LoggerInterface $logger){
 
         $logger->info("We are logging the contact page");
+
+        $contactForm = new Contact();
+
+        $form = $this->createFormBuilder($contactForm)
+            ->add('name', TextType::class)
+            ->add('surname',TextType::class)
+            ->add('email',EmailType::class)
+            ->add('message',TextareaType::class)
+            ->add('send',SubmitType::class)
+            ->getForm();
+
+
+        //SUBMIT CASE - START
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $logger->info("Contact Form page - Submit");
+            $formSubmit = $form->getData();
+
+            //Display data entry on screen
+            return $this->render('pages/contact-submit.html.twig',
+                array(
+                    'title' => 'Contact',
+                    'mainContent' => 'Data inserted from the form',
+                    'formFields' =>$formSubmit
+                )
+            );
+        }
+        //SUBMIT CASE - END
 
         return $this->render('pages/contact.html.twig',
             array(
                 'title' => 'Contact',
-                'mainContent' => 'Content'
+                'mainContent' => 'This form has been built using symfony/form . Please note: After submit the application won\'t display the Data Inserted',
+                'form' =>$form->createView()
             )
         );
     }
 
 
     /**
-     * @Route("/about")
+     * @Route("/about"  , name="about-page")
      *
      */
     public function about(LoggerInterface $logger){
@@ -60,7 +96,7 @@ class MainController extends Controller {
 
 
     /**
-     * @Route("/services")
+     * @Route("/services"  , name="services-page")
      *
      */
     public function services(LoggerInterface $logger){
@@ -76,7 +112,7 @@ class MainController extends Controller {
     }
 
     /**
-     * @Route("/marketing")
+     * @Route("/marketing"  , name="marketing-page")
      *
      */
     public function marketing(LoggerInterface $logger){

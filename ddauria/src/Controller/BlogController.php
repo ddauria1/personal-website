@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class BlogController extends Controller
 {
     /**
-     * @Route ("/blog")
+     * @Route ("/blog" , name="blog-page")
      */
     public function index(){
 

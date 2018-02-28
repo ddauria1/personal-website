@@ -2,12 +2,12 @@
 <nav id="page-navigation">
     <div>
         <ul id="main-navigation-list" class="topnav">
-            <li {% if (title=="Home") %} class="active" {% endif %} ><a href="/" >Home</a></li>
-            <li {% if (title=="About") %} class="active" {% endif %} ><a href="/about">About Me</a></li>
-            <li {% if (title=="Services") %} class="active" {% endif %} ><a href="/services">Services</a></li>
-            <li {% if (title=="Online Marketing") %} class="active" {% endif %} ><a href="/marketing">Online Marketing</a></li>
-            <li {% if (title=="Contact") %} class="active" {% endif %} ><a href="/contact">Contact</a></li>
-            <li {% if (title=="Blog") %} class="active" {% endif %} ><a href="/blog">Blog</a></li>
+            <li {% if (title=="Home") %} class="active" {% endif %} ><a href="{{ path("home-page") }}" >Home</a></li>
+            <li {% if (title=="About") %} class="active" {% endif %} ><a href="{{ path("about-page") }}">About Me</a></li>
+            <li {% if (title=="Services") %} class="active" {% endif %} ><a href="{{ path("services-page") }}">Services</a></li>
+            <li {% if (title=="Online Marketing") %} class="active" {% endif %} ><a href="{{ path("marketing-page") }}">Online Marketing</a></li>
+            <li {% if (title=="Contact") %} class="active" {% endif %} ><a href="{{ path("contact-page") }}">Contact</a></li>
+            <li {% if (title=="Blog") %} class="active" {% endif %} ><a href="{{ path("blog-page") }}">Blog</a></li>
             <li class="icon"><a href="javascript:void(0);" onclick="myFunction()">☰</a></li>
         </ul>
     </div>
