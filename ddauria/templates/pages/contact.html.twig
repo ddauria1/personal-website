@@ -2,13 +2,23 @@
 
 {% block title %}{{ title }}{% endblock %}
 
+{% block stylesheets %}
+<style>
+    #form{
+        margin: 20px;
+    }
+
+    label{ display: block; }
+
+</style>
+{% endblock %}
 
 {% block body %}
     {{ mainContent }}
 
+
     {{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}
-
 
 {% endblock %}

@@ -46,7 +46,7 @@ class MainController extends Controller {
             ->add('surname',TextType::class)
             ->add('email',EmailType::class)
             ->add('message',TextareaType::class)
-            ->add('send',SubmitType::class)
+            ->add('send',SubmitType::class,array("attr" => array('class' => 'button-to-action')))
             ->getForm();
 
 
@@ -71,7 +71,7 @@ class MainController extends Controller {
         return $this->render('pages/contact.html.twig',
             array(
                 'title' => 'Contact',
-                'mainContent' => 'This form has been built using symfony/form . Please note: After submit the application won\'t display the Data Inserted',
+                'mainContent' => 'This form has been built using symfony/form . Please note: After submit the application will only display the Data Inserted. No email sent!',
                 'form' =>$form->createView()
             )
         );
