@@ -647,6 +647,14 @@ img{border:0px;}
 a.button-to-action:hover {background:#990e12 !important;}
 .button-left{float:left;margin-right:10px;}
 
+
+#username{
+    float: right;
+    margin-right: 20px;
+    color: white;
+    font-weight: bold;
+}
+
 /*NAV Responsive*/
 
 /* Hide the list item that contains the link that should open and close the topnav on small screens */

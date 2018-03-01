@@ -22,7 +22,8 @@ class BlogController extends Controller
                 'title' => 'Blog',
                 'mainContent' => 'Content',
                 'listPages' => $listPages,
-                'listArticles' =>$listArticles
+                'listArticles' =>$listArticles,
+                'name' => $this->get('session')->get('name')
             )
         );
 
@@ -42,7 +43,8 @@ class BlogController extends Controller
         return $this->render("blog/list.html.twig",
             array(
                 'title' => 'Blog',
-                'id' =>$id
+                'id' =>$id,
+                'name' => $this->get('session')->get('name')
             )
         );
 
@@ -57,7 +59,8 @@ class BlogController extends Controller
             array(
                 'title' => 'Blog | '.$pageTitle,
                 'pageTitle' => ucwords(str_replace("-"," ",$pageTitle)),
-                'mainContent' => 'Content'
+                'mainContent' => 'Content',
+                'name' => $this->get('session')->get('name')
             )
         );
 

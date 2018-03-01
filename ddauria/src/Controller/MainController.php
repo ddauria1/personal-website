@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class MainController extends Controller {
 
@@ -18,14 +19,19 @@ class MainController extends Controller {
      * @Route("/" , name="home-page")
      *
      */
-    public function homepage(LoggerInterface $logger){
+    public function homepage(Request $request, LoggerInterface $logger){
 
         $logger->info("We are logging the homepage");
 
+
+        $content = file_get_contents($request->server->get('DOCUMENT_ROOT').$request->getBasePath().'\..\..\README.md');
+
+
         return $this->render('home.html.twig',
             array(
-                'title' => 'Home',
-                'mainContent' => 'Content'
+                'title' => 'README.md',
+                'mainContent' => $content,
+                'name' => $this->get('session')->get('name')
             )
         );
     }
@@ -57,12 +63,18 @@ class MainController extends Controller {
             $logger->info("Contact Form page - Submit");
             $formSubmit = $form->getData();
 
+            //Save Data in Session
+            $session = new Session();
+            $session->start();
+            $session->set('name',$formSubmit->getName());
+
             //Display data entry on screen
             return $this->render('pages/contact-submit.html.twig',
                 array(
                     'title' => 'Contact',
                     'mainContent' => 'Data inserted from the form',
-                    'formFields' =>$formSubmit
+                    'formFields' =>$formSubmit,
+                    'name' => $this->get('session')->get('name')
                 )
             );
         }
@@ -71,8 +83,9 @@ class MainController extends Controller {
         return $this->render('pages/contact.html.twig',
             array(
                 'title' => 'Contact',
-                'mainContent' => 'This form has been built using symfony/form . Please note: After submit the application will only display the Data Inserted. No email sent!',
-                'form' =>$form->createView()
+                'mainContent' => 'This form has been built using symfony/form .<br> Please note: After submit the application will save data in session and display the name on the top menu. <b>No email sent!</b>',
+                'form' =>$form->createView(),
+                'name' => $this->get('session')->get('name')
             )
         );
     }
@@ -89,7 +102,8 @@ class MainController extends Controller {
         return $this->render('pages/about.html.twig',
             array(
                 'title' => 'About',
-                'mainContent' => 'Content'
+                'mainContent' => 'Content',
+                'name' => $this->get('session')->get('name')
             )
         );
     }
@@ -106,7 +120,8 @@ class MainController extends Controller {
         return $this->render('pages/services.html.twig',
             array(
                 'title' => 'Services',
-                'mainContent' => 'Content'
+                'mainContent' => 'Content',
+                'name' => $this->get('session')->get('name')
             )
         );
     }
@@ -122,7 +137,8 @@ class MainController extends Controller {
         return $this->render('pages/marketing.html.twig',
             array(
                 'title' => 'Online Marketing',
-                'mainContent' => 'Content'
+                'mainContent' => 'Content',
+                'name' => $this->get('session')->get('name')
             )
         );
     }

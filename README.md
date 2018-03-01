@@ -1,13 +1,18 @@
-# personal-website with Symfony 4
+<h2>Personal Website with Symfony 4</h2>
 
-First website with Symfony 4
+<p>First website with Symfony 4</p>
 
-Learning the basic usage of:
-- annotations (wildcards, requirements)
-- custom error pages(visible only on PROD env)
-- debug
-- logger
-- twig (loops, filters)
-- forms
+Reviewed the basic usage of:<br>
+<ul>
+<li>annotations (wildcards, requirements)</li>
+<li>custom error pages(visible only on PROD env)</li>
+<li>debug</li>
+<li>logger</li>
+<li>twig (loops, filters)</li>
+<li>forms</li>
+<li>session</li>
+</ul>
 
-To test the custom error pages in your local machine, please update the APP_ENV attribute under .env file to prod. 
+<p>
+To test the custom error pages in your local machine, please update the APP_ENV attribute under .env file to prod.
+</p> 
