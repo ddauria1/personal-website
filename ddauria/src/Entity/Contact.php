@@ -4,16 +4,15 @@ namespace App\Entity;
 
 class Contact
 {
-    private $name;
-    private $surname;
-    private $email;
-    private $message;
+    private $name = "";
+    private $surname = "";
+    private $email = "";
+    private $message = "";
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getName()
-    {
+    public function getName():string {
         return $this->name;
     }
 
@@ -26,9 +25,9 @@ class Contact
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getSurname()
+    public function getSurname():string
     {
         return $this->surname;
     }
@@ -42,9 +41,9 @@ class Contact
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getEmail()
+    public function getEmail():string
     {
         return $this->email;
     }
@@ -58,9 +57,9 @@ class Contact
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getMessage()
+    public function getMessage():string
     {
         return $this->message;
     }
