@@ -4,6 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/ddauria/src" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/ddauria/tests" isTestSource="true" packagePrefix="App\Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/ddauria1/charity-package" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/form" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/ddauria/vendor/symfony/intl" />

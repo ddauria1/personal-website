@@ -3,6 +3,7 @@ namespace App\Controller;
 
 
 use App\Entity\Contact;
+use Charity\Base;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,11 +27,14 @@ class MainController extends Controller {
 
         $content = file_get_contents($request->server->get('DOCUMENT_ROOT').$request->getBasePath().'\..\..\README.md');
 
+        $charity = new Base();
+
 
         return $this->render('home.html.twig',
             array(
                 'title' => 'README.md',
                 'mainContent' => $content,
+                'charity' =>$charity->getDisplay(),
                 'name' => $this->get('session')->get('name')
             )
         );
